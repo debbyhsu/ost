@@ -1,0 +1,41 @@
+url for project: ost-project-167322.appspot.com
+
+For Testing:
+==============
+- Login is required to add resource, create reservation, or see resource/reservation details
+
+- To add a resource, click on "Add Resource" on the navigation bar on the top
+	- Date, start time, and end time are restricted to certain format as described on the webpage.
+		Namely, date: MM/DD/YYYY, time: HH:MM with 24hr time format
+	- Tags are separated by commas, tags are parsed and saved into individual tags later when processing the form
+
+- After a resource is made, clicking on the resource name will go to resource detail page
+	- contains:
+		- owner of the resource
+		- start/end time
+		- last booked time
+		- tags
+
+- to make a reservation, one must go to the resource detail page first and click Reserve
+
+- when a reservation is made, it will show in Reservation page, home page, and resource detail page.
+
+- deletion of a reservation is only abailable on the home page
+
+
+Developer's guide
+=================
+When setting up the project, first thing I do is to construct model that is going to be used in the datastore. 
+Then, I created a simple html file to test the RequestHandler and rendering of templates. Then I started to make multiple handler files and html files. I first put all the handlers in one file but then I feel like it is going to be too messy so I decided to separate handler files based on aspect of the project that it is going to be handling. 
+
+All the web related (frontend) files are in a folder called webapp it includes js, css, and html files.
+
+I also put ndb modles in one file and import them into other files rather than define it everywhere.
+
+Many of the html codes and handler codes are reused, for example, the table representation of reservations, and handler for addResource and editResource.
+
+I took a shortcut by asking user to use minutes when inputting for duration of reservation. It makes it easier for me to calculate the time. However, even if the user uses hours or other representation. I think it would not be that hard of a task to manually convert them.
+
+gql is used for querying database instead of sql.
+
+gql does not support delete statement so had to use could datastore's delete method.

@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="288688e6-1602-4b39-91ef-39341dd14c42" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webapp/templates/resource_detail.html" afterPath="$PROJECT_DIR$/webapp/templates/resource_detail.html" />
-    </list>
+    <list default="true" id="288688e6-1602-4b39-91ef-39341dd14c42" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,10 +37,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="resource_detail.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="resource_detail.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webapp/templates/resource_detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
+            <state relative-caret-position="95">
               <caret line="7" column="57" lean-forward="false" selection-start-line="7" selection-start-column="57" selection-end-line="7" selection-end-column="57" />
               <folding>
                 <element signature="n#style#0;n#h2#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -57,10 +55,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1013">
+            <state relative-caret-position="405">
               <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="32" selection-end-column="30" />
               <folding>
                 <element signature="e#23#32#0" expanded="true" />
@@ -273,24 +271,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ost" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ost" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -852,26 +832,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1013">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="32" selection-end-column="30" />
-          <folding>
-            <element signature="e#23#32#0" expanded="true" />
-            <marker date="1494769130000" expanded="true" signature="600:625" ph="Select * fro... Reservation" />
-            <marker date="1494769130000" expanded="true" signature="953:1021" ph="Select * fro... Reservation" />
-            <marker date="1494769130000" expanded="true" signature="953:1044" ph="Select * fro... Reservation" />
-            <marker date="1494769130000" expanded="true" signature="1123:1210" ph="Select * fro... Resource" />
-            <marker date="1494769130000" expanded="true" signature="1403:1419" ph="Select * fro... Reservation" />
-            <marker date="1494769130000" expanded="true" signature="1403:1447" ph="Select * fro... Resource" />
-            <marker date="1494769130000" expanded="true" signature="2167:2246" ph="Select * fro... Reservation" />
-            <marker date="1494769130000" expanded="true" signature="2325:2400" ph="Select * fro... Resource" />
-            <marker date="1494769130000" expanded="true" signature="3304:3326" ph="Select * fro... Resource" />
-            <marker date="1494769130000" expanded="true" signature="3304:3348" ph="Select * fro... Resource" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.yaml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -952,7 +912,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/webapp/templates/resource_detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
+        <state relative-caret-position="95">
           <caret line="7" column="57" lean-forward="false" selection-start-line="7" selection-start-column="57" selection-end-line="7" selection-end-column="57" />
           <folding>
             <element signature="n#style#0;n#h2#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -962,6 +922,26 @@
             <element signature="n#style#0;n#p#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h2#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="32" selection-end-column="30" />
+          <folding>
+            <element signature="e#23#32#0" expanded="true" />
+            <marker date="1494769130000" expanded="true" signature="600:625" ph="Select * fro... Reservation" />
+            <marker date="1494769130000" expanded="true" signature="953:1021" ph="Select * fro... Reservation" />
+            <marker date="1494769130000" expanded="true" signature="953:1044" ph="Select * fro... Reservation" />
+            <marker date="1494769130000" expanded="true" signature="1123:1210" ph="Select * fro... Resource" />
+            <marker date="1494769130000" expanded="true" signature="1403:1419" ph="Select * fro... Reservation" />
+            <marker date="1494769130000" expanded="true" signature="1403:1447" ph="Select * fro... Resource" />
+            <marker date="1494769130000" expanded="true" signature="2167:2246" ph="Select * fro... Reservation" />
+            <marker date="1494769130000" expanded="true" signature="2325:2400" ph="Select * fro... Resource" />
+            <marker date="1494769130000" expanded="true" signature="3304:3326" ph="Select * fro... Resource" />
+            <marker date="1494769130000" expanded="true" signature="3304:3348" ph="Select * fro... Resource" />
           </folding>
         </state>
       </provider>
