@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html lang="en">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/resources/add">Add Resource</a></li>
+        <li><a href="/resources">Resources</a></li>
+    </ul>
+    <head>
+        <title>Reserve</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="/stylesheets/main.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="login-btn">
+            <a href="{{ url|safe }}" class="btn">{{ url_linktext }}</a>
+        </div>
+        <div class="page-header text-center">
+            <h1>Reserve</h1>
+            <p>Reserving, simplified!</p>
+        </div>
+        <h2 style="margin-left: 20%;">{{ name }}</h2>
+            <div class="resource_detail">
+                <p><strong>Owned by: </strong> {{res.user}}</p>
+                <p><strong>Start: </strong> {{res.startTime}}</p>
+                <P><strong>End: </strong> {{res.endTime}}</P>
+                <P><strong>Last booked: </strong> {{res.lastRed}}</P>
+                <div>
+                    <p><strong>Tags:</strong></p>
+                    {% for t in res.tags %}
+                    <a href="/tag?tag={{ t.content }}" style=padding-left:4em;">{{ t.content }}</a>
+
+                    {% endfor %}
+                </div>
+                {% if user and user.user_id() == res.userid %}
+                    <a href="/resources/edit?id={{res.guid}}">Edit</a><br>
+                {% endif %}
+                <a href="/reservations/add?id={{res.guid}}">Reserve</a>
+            </div>
+        <br><br>
+        <hr>
+        <h2 style="margin-left: 20%;">Current Reservations</h2>
+            <p style="margin-left: 30%;">{{ current.user }}</p>
+            <p style="margin-left: 30%;">{{ current.startTime }}</p>
+            <p style="margin-left: 30%;">{{ current.duration }}</p>
+        <br><br>
+        <hr>
+        <h2 style="margin-left: 20%;">Upcoming Reservations</h2>
+        {% if reservation %}
+            <table>
+                <tr>
+                    <th>User</th>
+                    <th>Time</th>
+                    <th>Duration (min)</th>
+                </tr>
+            {% for re in reservation %}
+              <tr>
+                <td>{{ re.user }}</td>
+                <td>{{ re.startTime }}</td>
+                <td>{{ re.duration }}</td>
+              </tr>
+
+            {% endfor %}
+             </table>
+        {% endif %}
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </body>
+</html>
+{% endautoescape %}

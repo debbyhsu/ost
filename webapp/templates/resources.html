@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html lang="en">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/resources/add">Add Resource</a></li>
+        <li><a class="active" href="/resources">Resources</a></li>
+        <li><a href="/reservations">Reservations</a></li>
+    </ul>
+    <head>
+        <title>Reserve</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="/stylesheets/main.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="login-btn">
+            <a href="{{ url|safe }}" class="btn">{{ url_linktext }}</a>
+        </div>
+        <div class="page-header text-center">
+            <h1>Reserve</h1>
+            <p>Reserving, simplified!</p>
+        </div>
+        <h2 style="margin-left: 20%;">Resources</h2>
+            {% for re in resources %}
+                <div class="resource_list">
+                    <a href="/resources/detail?id={{re.guid}}">{{re.name}}</a>
+                    
+                 </div>
+            {% endfor %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </body>
+</html>
+{% endautoescape %}

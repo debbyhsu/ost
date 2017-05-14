@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html lang="en">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/resources/add">Add Resource</a></li>
+        <li><a href="/resources">Resources</a></li>
+        <li><a class="active" href="/reservations">Reservations</a></li>
+    </ul>
+    <head>
+        <title>Reserve</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="/stylesheets/main.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="login-btn">
+            <a href="{{ url|safe }}" class="btn">{{ url_linktext }}</a>
+        </div>
+        <div class="page-header text-center">
+            <h1>Reserve</h1>
+            <p>Reserving, simplified!</p>
+        </div>
+        <h2 style="margin-left: 20%;">Reservations</h2>
+            <table>
+                <tr>
+                    <th>User</th>
+                    <th>Resource</th>
+                    <th>Time</th>
+                    <th>Duration (min)</th>
+                </tr>
+            {% for re in reservation %}
+              <tr>
+                <td><a href="/user?id={{ re.userid }}">{{re.user}}</a></td>
+                <td><a href="/resources/detail?id={{ re.resourceid }}" >{{ re.resourceName }}</a></td>
+                <td>{{ re.startTime }}</td>
+                <td>{{ re.duration }}</td>
+              </tr>
+
+            {% endfor %}
+             </table>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </body>
+</html>
+{% endautoescape %}

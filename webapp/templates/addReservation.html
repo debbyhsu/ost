@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html lang="en">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/resources/add">Add Resource</a></li>
+        <li><a href="/resources">Resources</a></li>
+        <li><a href="/reservations">Reservations</a></li>
+    </ul>
+
+    <head>
+        <title>Reserve</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="/stylesheets/main.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="login-btn">
+            <a href="{{ url|safe }}" class="btn">{{ url_linktext }}</a>
+        </div>
+        <div class="page-header text-center">
+            <h1>Reserve</h1>
+            <p>Reserving, simplified!</p>
+        </div>
+        <h2 style="width:40%;margin: 0 auto;">Reserving for {{ name }}</h2>
+        <form class="addReservationForm" action="/reservations/add?id={{ id }}" method="post">
+            Start Time:<small>  24 Hours: HH:MM</small>
+            <br>
+            <input type="text" name="start_time" pattern="[0-9][0-9]:[0-9][0-9]" required>
+            <br>
+            Duration:<small>  in minutes </small>
+            <br>
+            <input type="text" name="duration" pattern="[0-9]*" required><br>
+            <br>
+            <div><input style="float: right;" type="submit" class="btn btn-large btn-primary" value="Create!"></div>
+            <p style="color:red;">{{ error }}</p>
+        </form>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </body>
+</html>
+{% endautoescape %}

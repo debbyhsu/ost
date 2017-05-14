@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html lang="en">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a class="active" href="/resources/add">Add Resource</a></li>
+        <li><a href="/resources">Resources</a></li>
+        <li><a href="/reservations">Reservations</a></li>
+    </ul>
+    <head>
+        <title>Reserve</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="/stylesheets/main.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="login-btn">
+            <a href="{{ url|safe }}" class="btn">{{ url_linktext }}</a>
+        </div>
+        <div class="page-header text-center">
+            <h1>Reserve</h1>
+            <p>Reserving, simplified!</p>
+        </div>
+        <h2 style="width: 25%; margin: 0 auto;">Add a resource</h2>
+
+        <form class="addResourceForm" action="/resources/add?" method="post">
+            Resource Name:<br>
+            <input type="text" name="name" required>
+            <br>
+            Date:<small>MM/DD/YYYY</small>
+            <br>
+            <input type="text" name="date" pattern="[0-9][0-9]/[0-9][0-9]/[0-9][0-9][0-9][0-9]" required>
+            <br>
+            Start Time:<small>  24 Hours: HH:MM</small>
+            <br>
+            <input type="text" name="start_time" pattern="[0-9][0-9]:[0-9][0-9]" required>
+            <br>
+            End Time:<small>  24 Hours: HH:MM</small>
+            <br>
+            <input type="text" name="end_time" pattern="[0-9][0-9]:[0-9][0-9]" required>
+            <br>
+            Tags:<br>
+            <div id="tags" class="tags">
+                <input type="text" name="tags" size="50">
+            </div>
+            <small>Please enter tags separated by commas! As many as you wish:)</small>
+            <br><br>
+            <div><input style="float: right;" type="submit" class="btn btn-large btn-primary" value="Create!"></div>
+        </form>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/js/main.js"></script>
+    </body>
+</html>
+{% endautoescape %}

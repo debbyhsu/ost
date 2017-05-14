@@ -1,0 +1,62 @@
+application: ost-project-167322
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: /webapp
+  static_dir: /webapp
+
+- url: /stylesheets/(.*\.(css))
+  static_files: webapp/stylesheets/\1
+  upload: webapp/stylesheets/(.*\.(css))
+
+- url: /js/(.*\.(js))
+  static_files: webapp/js/\1
+  upload: webapp/js/(.*\.(js))
+
+#setting authentication requirements for add resource, add reservation, edit resource
+
+- url: /user.*
+  script: main.app
+  login: required
+
+- url: /resources/add.*
+  script: resource.app
+  login: required
+
+- url: /resources/detail.*
+  script: resource.app
+  login: required
+
+- url: /resources/edit.*
+  script: resource.app
+  login: required
+
+- url: /reservations/add.*
+  script: reservation.app
+  login: required
+
+- url: /tags.*
+  script: tag.app
+
+- url: /resources.*
+  script: resource.app
+  login: required
+
+- url: /reservations.*
+  script: reservation.app
+
+- url: .*
+  script: main.app
+
+libraries:
+- name: webapp2
+  version: "2.5.2"
+- name: jinja2
+  version: latest
