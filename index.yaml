@@ -25,3 +25,13 @@ indexes:
 # automatically uploaded to the admin console when you next deploy
 # your application using appcfg.py.
 
+- kind: Reservation
+  properties:
+  - name: userid
+  - name: startTime
+
+- kind: Resource
+  properties:
+  - name: userid
+  - name: lastRed
+    direction: desc

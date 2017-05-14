@@ -159,7 +159,7 @@ class DeleteReservationHandler(webapp2.RequestHandler):
 
         query = "Select * from Reservation where guid=" + "'" + id + "'"
         r = ndb.gql(query).get()
-        r.delete
+        r.key.delete()
 
         if user:
             url = users.create_logout_url(self.request.uri)
