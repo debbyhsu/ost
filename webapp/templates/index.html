@@ -32,7 +32,6 @@
                     <th>Resource</th>
                     <th>Time</th>
                     <th>Duration (min)</th>
-                    <th>Action</th>
                 </tr>
             {% for re in reservation %}
               <tr>
@@ -40,9 +39,6 @@
                 <td><a href="/resources/detail?id={{ re.resourceid }}" >{{ re.resourceName }}</a></td>
                 <td>{{ re.startTime }}</td>
                 <td>{{ re.duration }}</td>
-                  {% if re.userid == user.user_id() %}
-                  <td><a href="/reservations/delete?id={{re.guid}}">delete</a></td>
-                  {% endif %}
               </tr>
 
             {% endfor %}

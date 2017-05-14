@@ -152,34 +152,34 @@ class AddReservationHandler(webapp2.RequestHandler):
             time.sleep(0.1)
             self.redirect('/reservations')
 
-class DeleteReservationHandler(webapp2.RequestHandler):
-    def get(self):
-        id = self.request.get('id')
-        user = users.get_current_user()
-
-        query = "Select * from Reservation where guid=" + "'" + id + "'"
-        r = ndb.gql(query).get()
-        r.delete
-
-        if user:
-            url = users.create_logout_url(self.request.uri)
-            url_linktext = 'Logout'
-        else:
-            url = users.create_login_url(self.request.uri)
-            url_linktext = 'Login'
-
-        template_values = {
-            'user': user,
-            'url': url,
-            'url_linktext': url_linktext,
-        }
-        referrer = self.request.headers.get('referer')
-        if referrer:
-            return self.redirect(referrer)
-        return self.redirect_to('/')
+# class DeleteReservationHandler(webapp2.RequestHandler):
+#     def get(self):
+#         id = self.request.get('id')
+#         user = users.get_current_user()
+#
+#         query = "Select * from Reservation where guid=" + "'" + id + "'"
+#         r = ndb.gql(query).get()
+#         r.delete
+#
+#         if user:
+#             url = users.create_logout_url(self.request.uri)
+#             url_linktext = 'Logout'
+#         else:
+#             url = users.create_login_url(self.request.uri)
+#             url_linktext = 'Login'
+#
+#         template_values = {
+#             'user': user,
+#             'url': url,
+#             'url_linktext': url_linktext,
+#         }
+#         referrer = self.request.headers.get('referer')
+#         if referrer:
+#             return self.redirect(referrer)
+#         return self.redirect_to('/')
 
 app = webapp2.WSGIApplication([
     ('/reservations', ReservationHandler),
-    ('/reservations/add', AddReservationHandler),
-    ('/reservations/delete', DeleteReservationHandler)
+    ('/reservations/add', AddReservationHandler)
+    # ('/reservations/delete', DeleteReservationHandler)
 ], debug=True)
